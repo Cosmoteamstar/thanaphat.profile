@@ -1,70 +1,153 @@
 import {
   ArrowUpRight,
+  ArrowRight,
+  Bot,
+  Boxes,
   BriefcaseBusiness,
+  Building2,
+  ChartNoAxesCombined,
   Code2,
+  Database,
+  Globe,
   Github,
   GraduationCap,
-  Layers3,
+  HandCoins,
+  Handshake,
+  House,
+  LayoutPanelTop,
+  Linkedin,
   Mail,
   MapPin,
-  MonitorSmartphone,
+  MessageCircle,
+  Network,
+  Phone,
+  ReceiptText,
+  ServerCog,
+  ShoppingCart,
   Sparkles,
+  UsersRound,
+  Warehouse,
+  Workflow,
 } from 'lucide-react';
 
 import mennImage from '../assets/images/menn.png';
-import suitedImage from '../assets/images/suited.jpg';
-import hathaiImage from '../assets/images/hathai.jpg';
-import kmutnbImage from '../assets/images/kmutnb.png';
 import checkImage from '../assets/images/check.png';
-import phpIcon from '../assets/images/skills/php.svg';
 import laravelIcon from '../assets/images/skills/laravel.png';
 import javascriptIcon from '../assets/images/skills/javascript.png';
-import figmaIcon from '../assets/images/skills/figma.png';
-import photoshopIcon from '../assets/images/skills/photoshop.png';
-import flutterIcon from '../assets/images/skills/flutter.png';
 import pythonIcon from '../assets/images/skills/python.webp';
-import cppIcon from '../assets/images/skills/cpp.png';
+
+const contact = {
+  email: 'Thanaphat709@gmail.com',
+  phone: '+66 62 197 4921',
+  phoneHref: 'tel:+66621974921',
+  github: 'https://github.com/Cosmoteamstar',
+  linkedin: 'https://www.linkedin.com/in/menxfire',
+};
 
 const skills = [
-  { name: 'PHP & SQL', icon: phpIcon, detail: 'Backend systems and database work' },
-  { name: 'Laravel', icon: laravelIcon, detail: 'Clean web application structure' },
-  { name: 'JavaScript', icon: javascriptIcon, detail: 'Interactive interfaces and jQuery' },
-  { name: 'Figma', icon: figmaIcon, detail: 'Interface planning and prototyping' },
-  { name: 'Photoshop', icon: photoshopIcon, detail: 'Visual editing and graphic assets' },
-  { name: 'Flutter', icon: flutterIcon, detail: 'Mobile UI and app prototypes' },
-  { name: 'Python', icon: pythonIcon, detail: 'Automation and practical scripts' },
-  { name: 'C++ / Arduino', icon: cppIcon, detail: 'Hardware logic and prototypes' },
+  { name: 'Odoo v17 / v19', badge: 'OD', detail: 'Enterprise and Community implementation' },
+  { name: 'Python ORM & Wizards', icon: pythonIcon, detail: 'Models, actions, computed fields, and business logic' },
+  { name: 'JavaScript OWL', icon: javascriptIcon, detail: 'Odoo web UI customization and interactive flows' },
+  { name: 'PostgreSQL & Migration', badge: 'PG', detail: 'Data migration, remapping, and database-aware fixes' },
+  { name: 'XML / QWeb / Portal', badge: 'XML', detail: 'Views, reports, menus, and customer-facing portal pages' },
+  { name: 'REST / JSON-RPC / XML-RPC', badge: 'API', detail: 'Integrations, webhooks, and third-party connectors' },
+  { name: 'Docker / Linux / Nginx', badge: 'OPS', detail: 'Deployment support and production environment work' },
+  { name: 'PHP / Laravel Background', icon: laravelIcon, detail: 'Backend foundation for web systems and APIs' },
+];
+
+const businessApps = [
+  { name: 'Sales', icon: ShoppingCart, detail: 'quotations, orders, customer flows' },
+  { name: 'Purchase', icon: Handshake, detail: 'vendor process and approval flow' },
+  { name: 'Accounting', icon: ReceiptText, detail: 'journals, invoices, financial entries' },
+  { name: 'CRM', icon: UsersRound, detail: 'lead, opportunity, customer pipeline' },
+  { name: 'Inventory', icon: Boxes, detail: 'stock movement and warehouse logic' },
+  { name: 'Website', icon: Globe, detail: 'portal, public pages, external UI' },
+  { name: 'Portal', icon: LayoutPanelTop, detail: 'customer-facing self-service views' },
 ];
 
 const projects = [
   {
-    title: 'Student Portfolio System',
-    type: 'Web application',
-    image: suitedImage,
-    description: 'A focused web experience for presenting profile, skills, and education with a polished visual layer.',
-    stack: ['PHP', 'JavaScript', 'Bootstrap'],
+    title: 'Loan Management System',
+    type: 'Odoo v17 Enterprise | 10 months',
+    icon: HandCoins,
+    description:
+      'Built a custom loan module with React as the customer-facing frontend and Odoo as the backend for loan application, repayment schedules, interest calculation, accounting entries, and LINE OA support.',
+    stack: ['Python ORM', 'Accounting', 'REST API', 'LINE OA'],
+    apps: ['Accounting', 'Website', 'Portal', 'CRM'],
+    flow: [
+      { label: 'React Frontend', note: 'application portal', icon: LayoutPanelTop },
+      { label: 'REST API', note: 'auth + form + status', icon: Network },
+      { label: 'Odoo Backend', note: 'loan module + ORM', icon: ServerCog },
+      { label: 'Accounting', note: 'journals + repayment', icon: ReceiptText },
+      { label: 'LINE OA', note: 'support + status', icon: MessageCircle },
+    ],
   },
   {
-    title: 'Hathai Visual Work',
-    type: 'Design direction',
-    image: hathaiImage,
-    description: 'Brand-facing visual work with clean composition, image treatment, and readable information hierarchy.',
-    stack: ['Photoshop', 'Figma', 'Canva'],
+    title: 'Real Estate & Auction Platform',
+    type: 'Odoo v17 Enterprise | 4 months',
+    icon: Building2,
+    description:
+      'Built property and auction workflows with a React customer-facing frontend, Odoo backend, live bidding behavior, CRM and Accounting integration, API-connected portal views, and LINE OA support.',
+    stack: ['CRM', 'Portal', 'Accounting', 'API'],
+    apps: ['CRM', 'Accounting', 'Website', 'Portal'],
+    flow: [
+      { label: 'React Website', note: 'listing + bidding UI', icon: Globe },
+      { label: 'API Layer', note: 'bid + customer sync', icon: Network },
+      { label: 'Odoo Auction', note: 'property + contract', icon: House },
+      { label: 'CRM / Accounting', note: 'lead + billing', icon: ChartNoAxesCombined },
+      { label: 'LINE OA', note: 'support + register', icon: MessageCircle },
+    ],
   },
   {
-    title: 'KMUTNB Learning Path',
-    type: 'Education',
-    image: kmutnbImage,
-    description: 'Information Technology for Industry experience across web, software, and practical engineering projects.',
-    stack: ['Laravel', 'Python', 'Flutter'],
+    title: 'Core ERP Development & POC',
+    type: 'Odoo v17 / v19 Enterprise | 19 months',
+    icon: ServerCog,
+    description:
+      'Translated internal business processes into Odoo workflows across Sales, Purchase, Inventory, Accounting, and CRM while maintaining UI/UX customizations and POCs.',
+    stack: ['Sales', 'Purchase', 'Inventory', 'POC'],
+    apps: ['Sales', 'Purchase', 'Inventory', 'Accounting', 'CRM', 'Website'],
+    flow: [
+      { label: 'Business Process', note: 'process mapping', icon: Workflow },
+      { label: 'Odoo Apps', note: 'core modules', icon: Warehouse },
+      { label: 'Custom Module', note: 'ORM + XML + Wizards', icon: Database },
+      { label: 'OWL / UI', note: 'custom screens + POC', icon: Code2 },
+      { label: 'Support', note: 'training + maintenance', icon: Bot },
+    ],
   },
 ];
 
 const stats = [
-  { value: '8+', label: 'Skill areas' },
-  { value: '3', label: 'Core disciplines' },
-  { value: 'IT', label: 'Industry focus' },
+  { value: 'v17/v19', label: 'Odoo versions' },
+  { value: '3+', label: 'ERP systems' },
+  { value: '19 mo', label: 'Core ERP work' },
 ];
+
+function FlowDiagram({ steps }) {
+  return (
+    <div className="mt-3 rounded-lg border border-black/10 bg-[#f7f8fa] p-3">
+      <div className="flex flex-col gap-2 xl:flex-row xl:items-stretch">
+        {steps.map((step, index) => (
+          <div className="contents" key={step.label}>
+            <div className="flex min-w-0 flex-1 items-start gap-3 rounded-md border border-black/10 bg-white p-3 xl:min-w-[120px]">
+              <span className="grid size-9 shrink-0 place-items-center rounded-md bg-[#eef6ff] text-[#0071e3]">
+                <step.icon className="size-5" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-[#111113]">{step.label}</p>
+                <p className="mt-1 text-xs leading-5 text-[#6e6e73]">{step.note}</p>
+              </div>
+            </div>
+            {index < steps.length - 1 && (
+              <div className="grid h-6 shrink-0 place-items-center text-[#0071e3] xl:h-auto xl:w-6">
+                <ArrowRight className="size-4 rotate-90 xl:rotate-0" />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -88,7 +171,7 @@ function App() {
           </div>
           <a
             className="hidden h-9 items-center gap-2 rounded-md bg-[#0071e3] px-3 text-sm font-medium text-white transition hover:bg-[#0077ed] sm:inline-flex"
-            href="mailto:cosmoteamstar@hotmail.com"
+            href={`mailto:${contact.email}`}
             title="Send email"
           >
             <Mail className="size-4" />
@@ -98,19 +181,19 @@ function App() {
       </header>
 
       <main id="top" className="pt-14">
-        <section className="mx-auto grid min-h-[calc(100svh-8rem)] w-full max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-[1.08fr_0.92fr] md:py-16">
+        <section className="mx-auto grid min-h-[calc(100svh-8rem)] w-full max-w-6xl grid-cols-1 items-center gap-10 px-5 py-14 md:grid-cols-[1.08fr_0.92fr] md:py-16">
           <div className="min-w-0 max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-black/10 bg-white px-3 py-2 text-sm text-[#5f5f64] shadow-sm">
               <Sparkles className="size-4 text-[#0071e3]" />
-              Web Developer / Designer
+              Odoo Developer
             </div>
             <h1 className="max-w-full break-words text-5xl font-semibold leading-[1.02] tracking-normal text-[#111113] sm:text-6xl lg:text-7xl">
               <span className="block">Thanaphat</span>
               <span className="block">Komut</span>
             </h1>
-            <p className="mt-6 max-w-full text-lg leading-8 text-[#5f5f64] sm:max-w-2xl sm:text-xl">
-              I build polished web experiences with practical backend thinking, clean interface design, and a love for
-              details that make software feel effortless.
+            <p className="mt-6 max-w-full break-words text-lg leading-8 text-[#5f5f64] sm:max-w-2xl sm:text-xl">
+              I design and customize Odoo ERP systems that turn complex business workflows into reliable modules,
+              integrations, portals, and automation for daily operations.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -122,12 +205,12 @@ function App() {
               </a>
               <a
                 className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-md border border-black/10 bg-white px-5 text-sm font-semibold text-[#1d1d1f] transition hover:border-black/20 sm:w-auto"
-                href="https://github.com/Cosmoteamstar"
+                href={contact.linkedin}
                 target="_blank"
                 rel="noreferrer"
               >
-                <Github className="size-4" />
-                GitHub
+                <Linkedin className="size-4" />
+                LinkedIn
               </a>
             </div>
           </div>
@@ -147,8 +230,10 @@ function App() {
               <div className="flex items-start gap-3">
                 <img className="mt-1 size-4" src={checkImage} alt="" aria-hidden="true" />
                 <div>
-                  <p className="text-sm font-semibold">Information Technology for Industry</p>
-                  <p className="mt-1 text-sm leading-6 text-[#6e6e73]">King Mongkut's University of Technology North Bangkok</p>
+                  <p className="text-sm font-semibold">Odoo Specialist</p>
+                  <p className="mt-1 text-sm leading-6 text-[#6e6e73]">
+                    ERP architecture, custom modules, APIs, and workflow automation
+                  </p>
                 </div>
               </div>
             </div>
@@ -171,25 +256,74 @@ function App() {
             <div>
               <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.16em] text-[#0071e3]">
                 <BriefcaseBusiness className="size-4" />
-                Selected Work
+                Odoo Work
               </p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-normal text-[#111113] md:text-5xl">Simple, sharp, useful.</h2>
+              <h2 className="mt-4 text-4xl font-semibold tracking-normal text-[#111113] md:text-5xl">
+                ERP modules built around real operations.
+              </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[#6e6e73]">
-              A small collection shaped around web development, visual design, and practical software projects.
+              Full-cycle implementation, advanced module customization, data migration, system configuration, and
+              integrations across Enterprise and Community editions.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-10 rounded-lg border border-black/10 bg-white p-5 shadow-sm">
+            <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#0071e3]">Odoo Business Apps</p>
+                <h3 className="mt-2 text-2xl font-semibold text-[#111113]">Standard apps used in business workflows</h3>
+              </div>
+              <p className="max-w-xl text-sm leading-6 text-[#6e6e73]">
+                These modules are the base layer I usually extend, integrate, or connect with custom business logic.
+              </p>
+            </div>
+            <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {businessApps.map((app) => (
+                <div className="flex min-w-0 items-start gap-3 rounded-md border border-black/10 bg-[#f7f8fa] p-3" key={app.name}>
+                  <span className="grid size-10 shrink-0 place-items-center rounded-md bg-white text-[#714b67]">
+                    <app.icon className="size-5" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-[#111113]">{app.name}</p>
+                    <p className="mt-1 text-xs leading-5 text-[#6e6e73]">{app.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-5">
             {projects.map((project) => (
-              <article className="overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm" key={project.title}>
-                <div className="aspect-[16/11] bg-[#e8e8ed]">
-                  <img className="h-full w-full object-cover" src={project.image} alt={project.title} />
+              <article className="grid overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm lg:grid-cols-[0.34fr_0.66fr]" key={project.title}>
+                <div className="bg-[#eef0f3] p-5">
+                  <div className="flex h-full min-h-[260px] flex-col justify-between rounded-md border border-black/10 bg-white/72 p-5">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="grid size-12 place-items-center rounded-md bg-[#eef6ff] text-[#0071e3]">
+                        <project.icon className="size-7" />
+                      </span>
+                      <span className="rounded-md bg-white px-3 py-1 text-xs font-semibold text-[#714b67]">Odoo Case</span>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">{project.type}</p>
+                      <p className="mt-3 text-3xl font-semibold leading-tight text-[#111113]">{project.title}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="p-5">
-                  <p className="text-sm font-medium text-[#0071e3]">{project.type}</p>
-                  <h3 className="mt-2 text-xl font-semibold text-[#111113]">{project.title}</h3>
-                  <p className="mt-3 min-h-[84px] text-sm leading-6 text-[#6e6e73]">{project.description}</p>
+                  <p className="text-sm leading-6 text-[#6e6e73]">{project.description}</p>
+                  <div className="mt-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">Odoo apps touched</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {project.apps.map((item) => (
+                        <span className="rounded-md bg-[#f0f1f4] px-3 py-1 text-xs font-semibold text-[#424245]" key={item}>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">Integration flow</p>
+                  <FlowDiagram steps={project.flow} />
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.stack.map((item) => (
                       <span className="rounded-md bg-[#f5f5f7] px-3 py-1 text-xs font-medium text-[#424245]" key={item}>
@@ -205,7 +339,7 @@ function App() {
 
         <section id="skills" className="bg-[#111113] px-5 py-16 text-white md:py-24">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
               <div>
                 <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.16em] text-[#86d1ff]">
                   <Code2 className="size-4" />
@@ -213,16 +347,21 @@ function App() {
                 </p>
                 <h2 className="mt-4 text-4xl font-semibold tracking-normal md:text-5xl">Tools for building from idea to release.</h2>
                 <p className="mt-5 text-base leading-7 text-white/64">
-                  Balanced across backend logic, frontend interactions, visual design, and hands-on prototypes.
+                  Focused on Odoo backend development, frontend customization, integration design, and stable
+                  operations for ERP systems.
                 </p>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {skills.map((skill) => (
                   <div className="rounded-lg border border-white/10 bg-white/[0.06] p-4" key={skill.name}>
                     <div className="flex items-center gap-3">
                       <span className="grid size-11 place-items-center rounded-md bg-white">
-                        <img className="max-h-7 max-w-7 object-contain" src={skill.icon} alt="" aria-hidden="true" />
+                        {skill.icon ? (
+                          <img className="max-h-7 max-w-7 object-contain" src={skill.icon} alt="" aria-hidden="true" />
+                        ) : (
+                          <span className="text-xs font-bold text-[#714b67]">{skill.badge}</span>
+                        )}
                       </span>
                       <div>
                         <h3 className="font-semibold">{skill.name}</h3>
@@ -237,21 +376,49 @@ function App() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             <div className="rounded-lg border border-black/10 bg-white p-6">
-              <Layers3 className="size-6 text-[#0071e3]" />
-              <h3 className="mt-4 text-lg font-semibold">Interface Craft</h3>
-              <p className="mt-2 text-sm leading-6 text-[#6e6e73]">Clean layouts, readable hierarchy, and responsive details.</p>
+              <Workflow className="size-6 text-[#0071e3]" />
+              <h3 className="mt-4 text-lg font-semibold">Workflow Translation</h3>
+              <p className="mt-2 text-sm leading-6 text-[#6e6e73]">
+                Work with System Analysts to convert business processes into customized Odoo flows.
+              </p>
             </div>
             <div className="rounded-lg border border-black/10 bg-white p-6">
-              <MonitorSmartphone className="size-6 text-[#34c759]" />
-              <h3 className="mt-4 text-lg font-semibold">Web & Mobile</h3>
-              <p className="mt-2 text-sm leading-6 text-[#6e6e73]">Practical app thinking across browser and mobile surfaces.</p>
+              <ServerCog className="size-6 text-[#34c759]" />
+              <h3 className="mt-4 text-lg font-semibold">API & Architecture</h3>
+              <p className="mt-2 text-sm leading-6 text-[#6e6e73]">
+                Design endpoints, authentication, request schemas, and integration points for multi-system data flows.
+              </p>
             </div>
             <div className="rounded-lg border border-black/10 bg-white p-6">
               <GraduationCap className="size-6 text-[#ff9f0a]" />
               <h3 className="mt-4 text-lg font-semibold">IT Foundation</h3>
-              <p className="mt-2 text-sm leading-6 text-[#6e6e73]">Grounded in Information Technology for Industry at KMUTNB.</p>
+              <p className="mt-2 text-sm leading-6 text-[#6e6e73]">
+                Bachelor of Industrial Technology in Information Technology for Industry, KMUTNB.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-black/10 bg-white px-5 py-16">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#0071e3]">Current Focus</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-normal text-[#111113] md:text-5xl">
+                Custom Odoo systems for teams that need more than default ERP.
+              </h2>
+            </div>
+            <div className="grid gap-3">
+              {[
+                'Sales, Purchase, Inventory, Accounting, CRM, and Web Portal workflows',
+                'Technical training, support, UI/UX customization, and production maintenance',
+                'POC development using Python ORM, Wizards, OWL, APIs, and automation logic',
+              ].map((item) => (
+                <div className="rounded-lg border border-black/10 bg-[#f5f5f7] p-4 text-sm leading-6 text-[#424245]" key={item}>
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -265,23 +432,36 @@ function App() {
               <MapPin className="size-4" />
               Bangkok, Thailand
             </p>
+            <a className="mt-2 flex items-center gap-2 text-sm text-[#6e6e73] transition hover:text-[#1d1d1f]" href={contact.phoneHref}>
+              <Phone className="size-4" />
+              {contact.phone}
+            </a>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
               className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-[#1d1d1f] px-4 text-sm font-semibold text-white transition hover:bg-black"
-              href="mailto:cosmoteamstar@hotmail.com"
+              href={`mailto:${contact.email}`}
             >
               <Mail className="size-4" />
-              cosmoteamstar@hotmail.com
+              {contact.email}
             </a>
             <a
               className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-black/10 bg-white px-4 text-sm font-semibold text-[#1d1d1f] transition hover:border-black/20"
-              href="https://github.com/Cosmoteamstar"
+              href={contact.github}
               target="_blank"
               rel="noreferrer"
             >
               <Github className="size-4" />
               GitHub
+            </a>
+            <a
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-black/10 bg-white px-4 text-sm font-semibold text-[#1d1d1f] transition hover:border-black/20"
+              href={contact.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Linkedin className="size-4" />
+              LinkedIn
             </a>
           </div>
         </div>
