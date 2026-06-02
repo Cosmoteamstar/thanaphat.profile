@@ -124,8 +124,8 @@ const stats = [
 
 function FlowDiagram({ steps }) {
   return (
-    <div className="mt-3 rounded-lg border border-black/10 bg-[#f7f8fa] p-3">
-      <div className="flex flex-col gap-2 xl:flex-row xl:items-stretch">
+    <div className="mt-3 overflow-x-auto rounded-lg border border-black/10 bg-[#f7f8fa] p-3">
+      <div className="flex flex-col gap-2 xl:w-max xl:flex-row xl:flex-nowrap xl:items-stretch">
         {steps.map((step, index) => (
           <div className="contents" key={step.label}>
             <div className="flex min-w-0 flex-1 items-start gap-3 rounded-md border border-black/10 bg-white p-3 xl:min-w-[120px]">
