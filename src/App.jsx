@@ -43,6 +43,7 @@ import Qweb from '../assets/images/skills/qweb.png';
 import loanManagementBg from '../assets/images/skills/loan_management.jpg';
 import realEstateBg from '../assets/images/skills/real_estate.jpg';
 import OdooBackground from '../assets/images/skills/odoo_background.jpg';
+import OdooImplement from '../assets/images/skills/odoo_implementer.jpg';
 
 const contact = {
   email: 'Thanaphat709@gmail.com',
@@ -126,11 +127,28 @@ const projects = [
       { label: 'Support', note: 'training + maintenance', icon: Bot },
     ],
   },
+  {
+    title: 'Odoo Upgrade Implementation (v8 → v18)',
+    type: 'Odoo v8 → v18 Community | 2 months',
+    icon: ServerCog,
+    backgroundImage: OdooImplement,
+    description:
+      'Delivered an end-to-end upgrade from Odoo v8 to v18: planning, reviewing all plugins, improving active modules, migrating legacy data to the new system, and providing enhancements, support, testing, and user training.',
+    stack: ['Upgrade Plan', 'Module Review', 'Data Migration', 'UAT'],
+    apps: ['Sales', 'Purchase', 'Inventory', 'Accounting', 'CRM', 'Website'],
+    flow: [
+      { label: 'Plan & Scope', note: 'upgrade roadmap', icon: Workflow },
+      { label: 'Plugin Review', note: 'audit 3rd-party apps', icon: Code2 },
+      { label: 'Module Upgrade', note: 'refactor active modules', icon: ServerCog },
+      { label: 'Data Migration', note: 'reuse legacy data', icon: Database },
+      { label: 'Testing & Training', note: 'UAT + user enablement', icon: Bot },
+    ],
+  },
 ];
 
 const stats = [
-  { value: 'v17/v18/v19', label: 'Odoo versions' },
-  { value: '3+', label: 'ERP systems' },
+  { value: 'v17/v18/v19', label: 'Odoo versions (Enterprise and Community)' },
+  { value: 'Deployment options', label: 'Odoo.sh + self-hosted' },
   { value: '19 months', label: 'Core ERP work' },
 ];
 
@@ -314,7 +332,7 @@ function App() {
                 <div className="relative min-w-0 overflow-hidden bg-[#eef0f3] p-5">
                   {project.backgroundImage && (
                     <div
-                      className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-15"
+                      className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-25"
                       style={{ backgroundImage: `url(${project.backgroundImage})` }}
                     />
                   )}
