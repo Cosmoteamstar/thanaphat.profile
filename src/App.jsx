@@ -81,6 +81,7 @@ const projects = [
     type: 'Odoo v17 Enterprise | 10 months',
     icon: HandCoins,
     backgroundImage: loanManagementBg,
+    company: 'Sourecode Co., Ltd',
     description:
       'Built a custom loan module with React as the customer-facing frontend and Odoo as the backend for loan application, repayment schedules, interest calculation, accounting entries, and LINE OA support.',
     stack: ['Python ORM', 'Accounting', 'REST API', 'LINE OA'],
@@ -98,6 +99,7 @@ const projects = [
     type: 'Odoo v17 Enterprise | 4 months',
     icon: Building2,
     backgroundImage: realEstateBg,
+    company: 'Sourecode Co., Ltd',
     description:
       'Built property and auction workflows with a React customer-facing frontend, Odoo backend, live bidding behavior, CRM and Accounting integration, API-connected portal views, and LINE OA support.',
     stack: ['CRM', 'Portal', 'Accounting', 'API'],
@@ -115,6 +117,7 @@ const projects = [
     type: 'Odoo v17 / v18 / v19 Enterprise | 19 months',
     icon: ServerCog,
     backgroundImage: OdooBackground,
+    company: 'Sourecode Co., Ltd',
     description:
       'Translated internal business processes into Odoo workflows across Sales, Purchase, Inventory, Accounting, and CRM while maintaining UI/UX customizations and POCs.',
     stack: ['Sales', 'Purchase', 'Inventory', 'POC'],
@@ -132,10 +135,11 @@ const projects = [
     type: 'Odoo v8 → v18 Community | 2 months',
     icon: ServerCog,
     backgroundImage: OdooImplement,
+    company: 'Skytizens Co., Ltd',
     description:
       'Delivered an end-to-end upgrade from Odoo v8 to v18: planning, reviewing all plugins, improving active modules, migrating legacy data to the new system, and providing enhancements, support, testing, and user training.',
     stack: ['Upgrade Plan', 'Module Review', 'Data Migration', 'UAT'],
-    apps: ['Sales', 'Purchase', 'Inventory', 'Accounting', 'CRM', 'Website'],
+    apps: ['Sales', 'Purchase', 'Inventory', 'Accounting', 'CRM', 'Helpdesk', 'Website', 'Employees'],
     flow: [
       { label: 'Plan & Scope', note: 'upgrade roadmap', icon: Workflow },
       { label: 'Plugin Review', note: 'audit 3rd-party apps', icon: Code2 },
@@ -351,7 +355,14 @@ function App() {
                   </div>
                 </div>
                 <div className="min-w-0 p-5">
-                  <p className="break-words text-sm leading-6 text-[#6e6e73]">{project.description}</p>
+                  {project.company && (
+                    <div className="flex justify-end">
+                      <span className="rounded-md bg-[#eef0f3] px-3 py-1 text-xs font-semibold text-[#424245]">
+                        {project.company}
+                      </span>
+                    </div>
+                  )}
+                  <p className="mt-3 break-words text-sm leading-6 text-[#6e6e73]">{project.description}</p>
                   <div className="mt-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">Odoo apps touched</p>
                     <div className="mt-3 flex flex-wrap gap-2">
