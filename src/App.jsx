@@ -253,11 +253,11 @@ function App() {
         </section>
 
         <section className="border-y border-black/10 bg-white">
-          <div className="mx-auto grid max-w-6xl grid-cols-3 px-5">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-black/10 px-5 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
             {stats.map((item) => (
-              <div className="border-l border-black/10 py-6 first:border-l-0 md:py-8" key={item.label}>
-                <p className="text-3xl font-semibold text-[#111113]">{item.value}</p>
-                <p className="mt-1 text-sm text-[#6e6e73]">{item.label}</p>
+              <div className="py-6 sm:px-6 md:py-8" key={item.label}>
+                <p className="text-3xl font-semibold leading-tight text-[#111113]">{item.value}</p>
+                <p className="mt-2 text-sm leading-6 text-[#6e6e73]">{item.label}</p>
               </div>
             ))}
           </div>
