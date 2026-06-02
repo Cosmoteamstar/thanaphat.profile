@@ -35,6 +35,14 @@ import checkImage from '../assets/images/check.png';
 import laravelIcon from '../assets/images/skills/laravel.png';
 import javascriptIcon from '../assets/images/skills/javascript.png';
 import pythonIcon from '../assets/images/skills/python.webp';
+import apiIcon from '../assets/images/skills/api.jpg';
+import odooIcon from '../assets/images/skills/odoo.png';
+import linuxIcon from '../assets/images/skills/linux.png';
+import Postgresql from '../assets/images/skills/Postgresql.svg.png';
+import Qweb from '../assets/images/skills/qweb.png';
+import loanManagementBg from '../assets/images/skills/loan_management.jpg';
+import realEstateBg from '../assets/images/skills/real_estate.jpg';
+import OdooBackground from '../assets/images/skills/odoo_background.jpg';
 
 const contact = {
   email: 'Thanaphat709@gmail.com',
@@ -45,13 +53,13 @@ const contact = {
 };
 
 const skills = [
-  { name: 'Odoo v17 / v19', badge: 'OD', detail: 'Enterprise and Community implementation' },
+  { name: 'Odoo v17 / v18 / v19', icon: odooIcon, detail: 'Enterprise and Community implementation' },
   { name: 'Python ORM & Wizards', icon: pythonIcon, detail: 'Models, actions, computed fields, and business logic' },
   { name: 'JavaScript OWL', icon: javascriptIcon, detail: 'Odoo web UI customization and interactive flows' },
-  { name: 'PostgreSQL & Migration', badge: 'PG', detail: 'Data migration, remapping, and database-aware fixes' },
-  { name: 'XML / QWeb / Portal', badge: 'XML', detail: 'Views, reports, menus, and customer-facing portal pages' },
-  { name: 'REST / JSON-RPC / XML-RPC', badge: 'API', detail: 'Integrations, webhooks, and third-party connectors' },
-  { name: 'Docker / Linux / Nginx', badge: 'OPS', detail: 'Deployment support and production environment work' },
+  { name: 'PostgreSQL & Migration', icon: Postgresql, detail: 'Data migration, remapping, and database-aware fixes' },
+  { name: 'XML / QWeb / Portal', icon: Qweb, detail: 'Views, reports, menus, and customer-facing portal pages' },
+  { name: 'REST / JSON-RPC / XML-RPC', icon: apiIcon, detail: 'Integrations, webhooks, and third-party connectors' },
+  { name: 'Docker / Linux / Nginx', icon: linuxIcon, detail: 'Deployment support and production environment work' },
   { name: 'PHP / Laravel Background', icon: laravelIcon, detail: 'Backend foundation for web systems and APIs' },
 ];
 
@@ -62,7 +70,8 @@ const businessApps = [
   { name: 'CRM', icon: UsersRound, detail: 'lead, opportunity, customer pipeline' },
   { name: 'Inventory', icon: Boxes, detail: 'stock movement and warehouse logic' },
   { name: 'Website', icon: Globe, detail: 'portal, public pages, external UI' },
-  { name: 'Portal', icon: LayoutPanelTop, detail: 'customer-facing self-service views' },
+  { name: 'HR', icon: UsersRound, detail: 'employee records, attendance, time off' },
+  { name: 'Helpdesk', icon: MessageCircle, detail: 'ticketing, SLAs, support workflows' },
 ];
 
 const projects = [
@@ -70,6 +79,7 @@ const projects = [
     title: 'Loan Management System',
     type: 'Odoo v17 Enterprise | 10 months',
     icon: HandCoins,
+    backgroundImage: loanManagementBg,
     description:
       'Built a custom loan module with React as the customer-facing frontend and Odoo as the backend for loan application, repayment schedules, interest calculation, accounting entries, and LINE OA support.',
     stack: ['Python ORM', 'Accounting', 'REST API', 'LINE OA'],
@@ -86,6 +96,7 @@ const projects = [
     title: 'Real Estate & Auction Platform',
     type: 'Odoo v17 Enterprise | 4 months',
     icon: Building2,
+    backgroundImage: realEstateBg,
     description:
       'Built property and auction workflows with a React customer-facing frontend, Odoo backend, live bidding behavior, CRM and Accounting integration, API-connected portal views, and LINE OA support.',
     stack: ['CRM', 'Portal', 'Accounting', 'API'],
@@ -100,8 +111,9 @@ const projects = [
   },
   {
     title: 'Core ERP Development & POC',
-    type: 'Odoo v17 / v19 Enterprise | 19 months',
+    type: 'Odoo v17 / v18 / v19 Enterprise | 19 months',
     icon: ServerCog,
+    backgroundImage: OdooBackground,
     description:
       'Translated internal business processes into Odoo workflows across Sales, Purchase, Inventory, Accounting, and CRM while maintaining UI/UX customizations and POCs.',
     stack: ['Sales', 'Purchase', 'Inventory', 'POC'],
@@ -299,8 +311,15 @@ function App() {
                 className="grid overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm lg:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)]"
                 key={project.title}
               >
-                <div className="min-w-0 bg-[#eef0f3] p-5">
-                  <div className="flex h-full min-h-[260px] flex-col justify-between rounded-md border border-black/10 bg-white/72 p-5">
+                <div className="relative min-w-0 overflow-hidden bg-[#eef0f3] p-5">
+                  {project.backgroundImage && (
+                    <div
+                      className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-15"
+                      style={{ backgroundImage: `url(${project.backgroundImage})` }}
+                    />
+                  )}
+                  <div className="relative z-10 flex h-full min-h-[260px] flex-col justify-between rounded-md border border-black/10 bg-white/72 p-5">
+                  
                     <div className="flex items-center justify-between gap-3">
                       <span className="grid size-12 place-items-center rounded-md bg-[#eef6ff] text-[#0071e3]">
                         <project.icon className="size-7" />
