@@ -117,9 +117,9 @@ const projects = [
 ];
 
 const stats = [
-  { value: 'v17/v19', label: 'Odoo versions' },
+  { value: 'v17/v18/v19', label: 'Odoo versions' },
   { value: '3+', label: 'ERP systems' },
-  { value: '19 mo', label: 'Core ERP work' },
+  { value: '19 months', label: 'Core ERP work' },
 ];
 
 function FlowDiagram({ steps }) {
@@ -295,8 +295,11 @@ function App() {
 
           <div className="mt-6 grid grid-cols-1 gap-5">
             {projects.map((project) => (
-              <article className="grid overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm lg:grid-cols-[0.34fr_0.66fr]" key={project.title}>
-                <div className="bg-[#eef0f3] p-5">
+              <article
+                className="grid overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm lg:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)]"
+                key={project.title}
+              >
+                <div className="min-w-0 bg-[#eef0f3] p-5">
                   <div className="flex h-full min-h-[260px] flex-col justify-between rounded-md border border-black/10 bg-white/72 p-5">
                     <div className="flex items-center justify-between gap-3">
                       <span className="grid size-12 place-items-center rounded-md bg-[#eef6ff] text-[#0071e3]">
@@ -305,13 +308,13 @@ function App() {
                       <span className="rounded-md bg-white px-3 py-1 text-xs font-semibold text-[#714b67]">Odoo Case</span>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">{project.type}</p>
-                      <p className="mt-3 text-3xl font-semibold leading-tight text-[#111113]">{project.title}</p>
+                      <p className="break-words text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">{project.type}</p>
+                      <p className="mt-3 break-words text-3xl font-semibold leading-tight text-[#111113]">{project.title}</p>
                     </div>
                   </div>
                 </div>
-                <div className="p-5">
-                  <p className="text-sm leading-6 text-[#6e6e73]">{project.description}</p>
+                <div className="min-w-0 p-5">
+                  <p className="break-words text-sm leading-6 text-[#6e6e73]">{project.description}</p>
                   <div className="mt-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73]">Odoo apps touched</p>
                     <div className="mt-3 flex flex-wrap gap-2">
