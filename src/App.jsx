@@ -47,8 +47,8 @@ import OdooImplement from '../assets/images/skills/odoo_implementer.jpg';
 
 const contact = {
   email: 'Thanaphat709@gmail.com',
-  phone: '+66 62 197 4921',
-  phoneHref: 'tel:+66621974921',
+  phone: 'Hiden for privacy',
+  // phoneHref: 'tel:+66621974921',
   github: 'https://github.com/Cosmoteamstar',
   linkedin: 'https://www.linkedin.com/in/menxfire',
 };
